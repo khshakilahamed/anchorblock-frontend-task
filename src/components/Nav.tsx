@@ -116,15 +116,17 @@ const Nav = () => {
                 </div>
               </NavRightMenu>
 
-              <Button className="ml-4 hidden sm:flex" onClick={handleLogout}>
-                <Link to="/">Logout</Link>
-              </Button>
+              <Link to="/">
+                <Button className="ml-4 hidden sm:flex" onClick={handleLogout}>
+                  Logout
+                </Button>
+              </Link>
             </>
           ) : (
             <>
-              <Button>
-                <Link to="/sign-in">Sign in</Link>
-              </Button>
+              <Link to="/sign-in">
+                <Button>Sign in</Button>
+              </Link>
               <span className="sm:hidden">
                 <NavRightMenu menuItems={navBadgeItems}>
                   <CgMenuRightAlt className="text-2xl" />

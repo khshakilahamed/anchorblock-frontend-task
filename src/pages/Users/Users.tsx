@@ -9,6 +9,7 @@ import Nav from "../../components/Nav";
 import { GrChapterPrevious } from "react-icons/gr";
 import { GrChapterNext } from "react-icons/gr";
 import Loading from "../../components/Loading";
+import toast from "react-hot-toast";
 
 type singleUserDataType = {
   id: number;
@@ -58,6 +59,12 @@ const Users = () => {
     }
   };
 
+  const handleModal = () => {
+    toast("Testing...", {
+      duration: 1000,
+    });
+  };
+
   return (
     <div>
       <Nav />
@@ -65,11 +72,18 @@ const Users = () => {
         <div className="my-8 flex justify-between items-center">
           <h2 className="text-2xl font-bold">Users</h2>
           <div className="flex flex-row gap-2 items-center font-semibold">
-            <Button buttonType="light" className="flex items-center gap-2">
+            <Button
+              buttonType="light"
+              className="flex items-center gap-2"
+              onClick={handleModal}
+            >
               <FiUploadCloud className="text-xl " />
               <span className="hidden sm:flex">Import</span>
             </Button>
-            <Button className="flex items-center gap-2 font-semibold">
+            <Button
+              className="flex items-center gap-2 font-semibold"
+              onClick={handleModal}
+            >
               <IoMdAdd className="text-xl text-secondary" />
               <span className="hidden sm:flex">Add User</span>
             </Button>
