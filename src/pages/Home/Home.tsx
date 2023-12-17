@@ -1,11 +1,10 @@
-import Button from "../../components/Button";
+import Nav from "../../components/Nav";
 
 const Home = () => {
   return (
-    <div>
-      {/* <Link to="/users">click to Users page</Link> */}
-      <Button />
-    </div>
+    <main>
+      <Nav />
+    </main>
   );
 };
 
