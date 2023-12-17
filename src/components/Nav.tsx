@@ -8,6 +8,7 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import NavRightMenu from "./NavRightMenu";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { logout } from "../redux/auth/authActions";
+import toast from "react-hot-toast";
 
 const Nav = () => {
   const { token }: { token: any } = useAppSelector((state) => state.auth);
@@ -16,6 +17,7 @@ const Nav = () => {
 
   const handleLogout = () => {
     dispatch(logout());
+    toast.success("Successfully Logged out");
     navigate("/sign-in");
   };
 

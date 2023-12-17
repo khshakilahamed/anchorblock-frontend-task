@@ -16,7 +16,6 @@ const baseURL = baseUrl();
 export const signIn = createAsyncThunk(
   "auth/signIn",
   async (credentials: loginType) => {
-    console.log(credentials);
     try {
       const res = await fetch(`${baseURL}/login`, {
         method: "POST",
@@ -28,7 +27,7 @@ export const signIn = createAsyncThunk(
 
       const LoginResponse: LoginResponse = await res.json();
 
-      console.log(LoginResponse);
+      // console.log(LoginResponse);
 
       localStorage.removeItem("token");
       localStorage.setItem("token", LoginResponse.token);

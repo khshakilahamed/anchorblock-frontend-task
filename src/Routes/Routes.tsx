@@ -4,6 +4,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Users from "../pages/Users/Users";
 import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/users",
-    element: <Users />,
+    element: (
+      <PrivateRoute>
+        <Users />
+      </PrivateRoute>
+    ),
     errorElement: <ErrorPage />,
   },
   {
